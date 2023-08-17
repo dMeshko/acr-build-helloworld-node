@@ -8,6 +8,7 @@ description: "This Node.js application is for use in demonstrating scenarios for
 urlFragment: acr-build-helloworld-node
 ---
 
+// test modifying files in a submodule!
 
 # ACR Build Hello World
 
