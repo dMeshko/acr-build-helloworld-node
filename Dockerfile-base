@@ -1,2 +1,2 @@
 FROM alpine:20231219
-ENV GREETING_MESSAGE "hello world"
+ENV GREETING_MESSAGE "hello world!"
