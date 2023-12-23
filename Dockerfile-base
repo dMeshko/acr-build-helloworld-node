@@ -1,2 +1,2 @@
-FROM node:15-alpine
-ENV NODE_VERSION 15.2.1
+FROM alpine:20231219
+ENV GREETING_MESSAGE "hello world"
