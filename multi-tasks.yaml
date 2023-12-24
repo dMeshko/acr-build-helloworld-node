@@ -1,0 +1,16 @@
+version: v1.1.0
+steps:
+  # build target image
+  - build: -t {{.Run.Registry}}/multi-step:{{.Run.ID}} -f Dockerfile .
+  # run image
+  - cmd: -t {{.Run.Registry}}/multi-step:{{.Run.ID}}
+    id: test
+    detach: true
+  # stop the image
+  - cmd: docker stop test
+  # retag image
+  - cmd: docker tag {{.Run.Registry}}/multi-step:{{.Run.ID}} {{.Run.Registry}}/multi-step:latest
+  # push image
+  - push:
+    - {{.Run.Registry}}/multi-step:{{.Run.ID}}
+    - {{.Run.Registry}}/multi-step:latest
